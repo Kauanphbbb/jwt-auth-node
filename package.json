@@ -1,0 +1,26 @@
+{
+  "name": "jwt-auth-node",
+  "version": "1.0.0",
+  "description": "Autenticação JWT em APIs Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx watch src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.12.0",
+    "@types/node": "^22.7.4",
+    "eslint": "^9.12.0",
+    "globals": "^15.10.0",
+    "prisma": "^5.20.0",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2",
+    "typescript-eslint": "^8.8.1"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.20.0"
+  }
+}
