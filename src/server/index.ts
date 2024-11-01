@@ -1,6 +1,7 @@
 import express from 'express';
 import { env } from '../app/config/env';
 import { makeAuthenticationMiddleware } from '../factories/makeAuthenticationMiddleware';
+import { makeAuthorizationMiddleware } from '../factories/makeAuthorizationMiddleware';
 import { makeCreateLeadsController } from '../factories/makeCreateLeadsController';
 import { makeListLeadsController } from '../factories/makeListLeadsController';
 import { makeSignInController } from '../factories/makeSignInController';
@@ -29,6 +30,7 @@ app.get(
 app.post(
   '/leads',
   middlewareAdapter(makeAuthenticationMiddleware()),
+  middlewareAdapter(makeAuthorizationMiddleware(['ADMIN'])),
   routeAdapter(makeCreateLeadsController())
 );
 

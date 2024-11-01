@@ -10,6 +10,8 @@ export function middlewareAdapter(middleware: IMiddleware) {
     try {
       const result = await middleware.handle({
         headers: request.headers as Record<string, string>,
+        body: request.body,
+        account: request.metadata?.account,
       });
 
       if ('statusCode' in result) {
