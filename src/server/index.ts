@@ -24,13 +24,14 @@ app.post('/sign-in', routeAdapter(makeSignInController()));
 app.get(
   '/leads',
   middlewareAdapter(makeAuthenticationMiddleware()),
+  middlewareAdapter(makeAuthorizationMiddleware(['leads:read'])),
   routeAdapter(makeListLeadsController())
 );
 
 app.post(
   '/leads',
   middlewareAdapter(makeAuthenticationMiddleware()),
-  middlewareAdapter(makeAuthorizationMiddleware(['ADMIN'])),
+  middlewareAdapter(makeAuthorizationMiddleware(['leads:write'])),
   routeAdapter(makeCreateLeadsController())
 );
 
