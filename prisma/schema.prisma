@@ -32,3 +32,11 @@ model Role {
 
   @@map("roles")
 }
+
+model Permission {
+  id   String @id @default(uuid()) @db.Uuid
+  name String
+  code String @unique
+
+  @@map("permissions")
+}
